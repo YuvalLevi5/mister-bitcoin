@@ -1,0 +1,32 @@
+.app-header {
+    background-color: hsl(340, 49%, 45%);
+
+
+    padding: 0 1em;
+
+    .header-container {
+        height: 10vh;
+    }
+
+    h1 {
+        font-family: sunny-spell;
+    }
+
+    .link-container {
+        height: 100%;
+
+        a {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+
+            &:hover {
+                background-color: hsl(340, 56%, 56%);
+            }
+        }
+    }
+
+
+}

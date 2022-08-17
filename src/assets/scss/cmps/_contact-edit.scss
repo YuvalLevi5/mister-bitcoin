@@ -1,0 +1,28 @@
+.form-container {
+    gap: 10px;
+    // align-items: center;
+
+    .form-line {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+        label {
+            font-size: 18px;
+        }
+
+        input {
+            flex: 1;
+            padding: 0.375rem 0.75rem;
+            line-height: 1.5;
+            border: 2px solid #a1a1aa;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            font-size: 16px;
+        }
+    }
+
+    .save-contact {
+        width: 100%;
+    }
+}

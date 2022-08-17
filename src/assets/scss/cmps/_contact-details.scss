@@ -1,0 +1,40 @@
+.details-container {
+    .img-container {
+        width: 100%;
+        --b: 10px;
+        padding: var(--b);
+        border: calc(2*var(--b)) solid #0000;
+        outline: 1px solid #000;
+        outline-offset: calc(-1*var(--b));
+        background: conic-gradient(from 90deg at 1px 1px, #0000 90deg, #000 0);
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+    .info-container {
+        width: 100%;
+        padding-left: 20px;
+
+
+        .text-container {
+            display: grid;
+            grid-template-columns: 65px 1fr;
+            font-size: 18px;
+            margin-bottom: 6px;
+
+        }
+
+
+    }
+
+    .btn-container {
+        width: 100%;
+        padding: 0 20px;
+        .back-btn {
+            width: 100%;
+        }
+    }
+
+}

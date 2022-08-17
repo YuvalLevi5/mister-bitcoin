@@ -1,0 +1,30 @@
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+
+// Basics
+@import "basics/typography";
+@import "basics/base";
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/modals";
+@import "basics/animations";
+
+// Pages
+
+// Components
+@import "cmps/contact-preview";
+@import "cmps/app-header";
+@import "cmps/contact-filter";
+@import "cmps/contact-edit";
+@import "cmps/contact-details";
+@import "cmps/signup-page";
+
+
+
+.App {
+    background-color: #123c69;
+    min-height: 100vh;
+    color: #eee2dc;
+}

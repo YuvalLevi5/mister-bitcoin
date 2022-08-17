@@ -1,0 +1,14 @@
+.signup-container {
+    background-color: #123c69;
+    min-height: 100vh;
+    color: #eee2dc;
+
+    .form-container {
+        h1 span {
+            font-family: sunny-spell;
+        }
+        background-color: hsl(340, 49%, 45%);
+        padding: 20px;
+        border-radius: 10px;
+    }
+}

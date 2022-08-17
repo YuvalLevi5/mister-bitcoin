@@ -1,0 +1,84 @@
+.contact-item {
+    background-color: #bab2b5;
+    border: 1px solid #1a1110;
+    margin-block-end: 0.5rem;
+    padding: 0.3rem;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+
+    .contact-item-img {
+        width: 10%;
+    }
+
+    .contact-item-name {
+        flex: 2;
+        font-size: 1.2rem;
+        text-align: start;
+        margin-inline-start: 2rem;
+        text-decoration: none;
+    }
+
+    .contact-btn {
+        visibility: hidden;
+        padding: 3px 10px;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .delete-btn {
+        background-color: #ef4444;
+        color: #eee2dc;
+        &:hover {
+            background-color: #f87171;
+        }
+    }
+
+    .edit-btn {
+        background-color: #10b981;
+
+        &:hover {
+            background-color: #34d399;
+        }
+    }
+
+    &:hover {
+        // transform: scale(1.02);
+        background-color: hsl(337, 12%, 82%);
+        color: hsl(20, 50%, 110%);
+
+        .contact-btn {
+            visibility: visible;
+            opacity: 0.9;
+        }
+    }
+}
+
+// button{
+//   background-color:#f95959;
+//   border: none;
+//   border-radius: 3px;
+//   color: white;
+//   padding: 5px 15px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 16px;
+//   margin: 4px 2px;
+//   cursor: pointer;
+//   &:hover{
+//     opacity:0.9;
+//   }
+// }
