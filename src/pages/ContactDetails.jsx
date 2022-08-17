@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import { contactService } from '../services/contactService'
+import { userService } from '../services/userService'
+import { connect } from 'react-redux'
+import { makeMove } from '../store/actions/userActions'
+import { MovesList } from '../cmps/MovesList'
 
-export default class ContactDetails extends Component {
+class _ContactDetails extends Component {
     state = {
         contact: null,
         move: {
@@ -12,17 +16,24 @@ export default class ContactDetails extends Component {
         }
     }
     async componentDidMount() {
-        this.loadContact()
+        await this.loadContact()
+
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            this.loadRobot()
+            this.loadContact()
         }
     }
 
     async loadContact() {
+        const loggedInUserMoves = this.props.loggedInUser.moves
         const contactId = this.props.match.params.id
         const contact = await contactService.getContactById(contactId)
+
+
+        contact.moves = loggedInUserMoves.filter((move) => contact._id === move.to)
+        contact.moves = contact.moves.reverse()
+        console.log(contact)
         this.setState({ contact })
     }
 
@@ -31,8 +42,12 @@ export default class ContactDetails extends Component {
         // this.props.history.goBack()
     }
 
-    makeAmove = (ev) => {
+    makeAmove = async (ev) => {
         ev.preventDefault()
+        const { move, contact } = this.state
+        // userService.makeMove(move.amount)
+        await this.props.makeMove(move.amount, contact)
+         this.loadContact()
     }
 
     handleChange = ({ target }) => {
@@ -40,6 +55,8 @@ export default class ContactDetails extends Component {
         const value = target.type === 'number' ? (+target.value || '') : target.value
         this.setState(prevState => ({ move: { ...prevState.move, [field]: value } }))
     }
+
+
 
     render() {
         const { contact, move } = this.state
@@ -66,14 +83,29 @@ export default class ContactDetails extends Component {
                 </div>
 
                 <form>
-                    <input type="number"  name="amount" id="amount" value={move.amount} onChange={this.handleChange}/>
-                    <button onClick={this.makeAmove}>CLick</button>
+                    <input className='form-input' type="number" name="amount" id="amount" value={move.amount} onChange={this.handleChange} />
+                    <button className='btn btn-success' onClick={this.makeAmove}>CLick</button>
                 </form>
 
                 <div className="btn-container">
                     <button className='back-btn btn btn-secondary' onClick={this.onBack}>Back</button>
                 </div>
+
+                <MovesList moves={contact.moves} isHomePage={false} />
             </div>
         )
     }
 }
+
+
+const mapStateToProps = state => {
+    return {
+        loggedInUser: state.userModule.loggedInUser
+    }
+}
+
+const mapDispatchToProps = {
+    makeMove,
+}
+
+export const ContactDetails = connect(mapStateToProps, mapDispatchToProps)(_ContactDetails)

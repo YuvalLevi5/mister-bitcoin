@@ -11,6 +11,17 @@
         justify-content: center;
     }
 
+    form {
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        column-gap: 8px;
+        margin-bottom: 8px;
+
+        input {
+            flex: 1
+        }
+    }
 
 
     .info-container {
@@ -32,6 +43,7 @@
     .btn-container {
         width: 100%;
         padding: 0 20px;
+
         .back-btn {
             width: 100%;
         }

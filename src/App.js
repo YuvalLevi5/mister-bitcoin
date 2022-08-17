@@ -5,7 +5,7 @@ import {HomePage} from './pages/HomePage';
 import { ContactPage } from './pages/ContactPage';
 import StatisticPage from './pages/StatisticPage'
 import { AppHeader } from '../src/cmps/AppHeader'
-import ContactDetails from './pages/ContactDetails'
+import {ContactDetails} from './pages/ContactDetails'
 import { ContactEdit } from './pages/ContactEdit'
 import { SignUpPage } from './pages/SignUpPage'
 import { connect } from 'react-redux'
