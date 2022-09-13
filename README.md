@@ -1,7 +1,5 @@
 <h1 align="center" id="title">Mister Bitcoin</h1>
 
-<p align="center"><img src="https://socialify.git.ci/YuvalLevi5/mister-bitcoin/image?language=1&amp;name=1&amp;owner=1&amp;theme=Light" alt="project-image"></p>
-
 <p id="description">My first react web-app.</p>
 
 <h2>🚀 Demo</h2>
